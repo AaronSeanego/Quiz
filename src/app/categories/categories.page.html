@@ -1,0 +1,18 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Categories</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <div class="ion-padding" *ngFor = "let Q of questions">
+    
+      <ion-card [routerLink] = "['/questions']" (click) = "setID(Q)">
+        <ion-card-header>
+          <ion-card-subtitle>Card Subtitle</ion-card-subtitle>
+          <ion-card-title>{{Q.Name}}</ion-card-title>
+        </ion-card-header>
+          
+      </ion-card>
+    </div>
+</ion-content>

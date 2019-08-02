@@ -1,0 +1,32 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>logIn</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <div style = "text-align: center;">
+    <ion-list>
+      <ion-item>
+        <ion-input required placeholder = "Email" [(ngModel)] = "email">
+          <ion-icon name="mail" style = "width:20px;height:20px;"></ion-icon>
+        </ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-input required placeholder = "Password" [(ngModel)] = "password">
+          <ion-icon name="lock" style = "width:20px;height:20px;"></ion-icon>
+        </ion-input>
+      </ion-item>
+    </ion-list>
+
+    <p>
+      <ion-button size = "small" shape = "round" fill="outline" (click) = "Log_In()" [routerLink] = "['/home']">Log In</ion-button>
+    </p>
+
+    <p>
+      <ion-button size = "small" shape = "round" fill="outline" [routerLink] = "['/register']">Register</ion-button>
+    </p>
+  </div>
+</ion-content>
