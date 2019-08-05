@@ -15,10 +15,25 @@
     
       <ion-card-content>
         <ion-list>
-          <ion-radio-group>
-            <ion-item *ngFor = "let ans of Answers">
-              <ion-label>{{ans.Answer}}</ion-label>
-              <ion-radio slot="start" value="Man"></ion-radio>
+          <ion-radio-group (onChange) = "setData($event)">
+            <ion-item>
+              <ion-label>{{quiz.Answer[0]}}</ion-label>
+              <ion-radio slot="start" value="{{quiz.Answer[0]}}"></ion-radio>
+            </ion-item>
+
+            <ion-item>
+              <ion-label>{{quiz.Answer[1]}}</ion-label>
+              <ion-radio slot="start" value="{{quiz.Answer[1]}}"></ion-radio>
+            </ion-item>
+            
+            <ion-item>
+              <ion-label>{{quiz.Answer[2]}}</ion-label>
+              <ion-radio slot="start" value="{{quiz.Answer[2]}}"></ion-radio>
+            </ion-item>
+
+            <ion-item>
+              <ion-label>{{quiz.Answer[3]}}</ion-label>
+              <ion-radio slot="start" value="{{quiz.Answer[3]}}"></ion-radio>
             </ion-item>
           </ion-radio-group>
         </ion-list>

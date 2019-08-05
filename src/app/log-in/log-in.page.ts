@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { QuizService } from '../quiz.service';
+import { FormBuilder,Validators, FormGroup} from '@angular/forms'
 
 @Component({
   selector: 'app-log-in',
@@ -9,7 +10,9 @@ import { QuizService } from '../quiz.service';
 export class LogInPage implements OnInit {
   email;
   password;
-  constructor(public logInService:QuizService) { }
+  logInForm:FormGroup
+  constructor(public logInService:QuizService) {
+  }
 
   ngOnInit() {
   }
