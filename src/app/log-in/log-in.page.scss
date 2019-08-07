@@ -1,0 +1,23 @@
+ion-header {
+}
+
+ion-toolbar {
+    --background: #323d44;
+    border-bottom: 0px;
+}
+
+ion-toolbar ion-title {
+    --color: white;
+}
+/*--background: #9bc4d8;*/
+ion-content {
+    --background: #323d44;
+}
+
+ion-content div ion-list ion-item ion-input {
+}
+
+ion-tab-bar {
+    --background: #323d44;
+    border-top: 0px;
+}

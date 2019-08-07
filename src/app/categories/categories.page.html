@@ -1,8 +1,11 @@
-<ion-header>
+<!-- <ion-header>
   <ion-toolbar>
     <ion-title>Categories</ion-title>
   </ion-toolbar>
-</ion-header>
+</ion-header> -->
+<ion-toolbar>
+  <ion-title>Categories</ion-title>
+</ion-toolbar>
 
 <ion-content>
     <div class="ion-padding" *ngFor = "let Q of questions">
@@ -16,3 +19,18 @@
       </ion-card>
     </div>
 </ion-content>
+
+<ion-tab-bar slot="bottom">
+
+  <ion-tab-button tab="arrow-back">
+    <ion-icon name="arrow-back" color = "primary"></ion-icon>
+  </ion-tab-button>
+
+  <ion-tab-button tab="home">
+    <ion-icon name="home" color = "primary"></ion-icon>
+  </ion-tab-button>
+
+  <ion-tab-button tab="about">
+    <ion-icon name="information-circle" color = "primary"></ion-icon>
+  </ion-tab-button>
+</ion-tab-bar>

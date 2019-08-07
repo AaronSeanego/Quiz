@@ -12,16 +12,18 @@ export class CategoriesPage implements OnInit {
   name;
   id;
   constructor(public categoryService:QuizService) {
-    var king = firebase.database().ref().child('Categories')
+    this.questions = this.categoryService.Categories();
+    
+    // var king = firebase.database().ref().child('Categories')
 
-      king.on("child_added",snap => {
-        this.name = snap.child("Name").val();
-        this.id = snap.child("ID").val();
-        this.questions.push({
-        ID: this.id,
-        Name: this.name
-      })
-    })
+    //   king.on("child_added",snap => {
+    //     this.name = snap.child("Name").val();
+    //     this.id = snap.child("ID").val();
+    //     this.questions.push({
+    //     ID: this.id,
+    //     Name: this.name
+    //   })
+    // })
   }
 
   ngOnInit() {

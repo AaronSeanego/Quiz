@@ -1,18 +1,18 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>logIn</ion-title>
-  </ion-toolbar>
-</ion-header>
+
+<ion-toolbar>
+  <ion-title>Log In</ion-title>
+</ion-toolbar>
 
 <ion-content>
 
   <div style = "text-align: center;">
    
     <ion-list style = "margin-left: 20px;margin-right: 20px;
-    margin-top: 50px;height: 400px;">
+    margin-top: 50px;height: 400px;border-radius: 10px;
+    background-color: transparent;">
 
       <ion-icon name="person" style = "width: 80px;height: 80px;
-      margin-bottom: 30px;border:1px solid blue;padding: 10px;
+      margin-bottom: 30px;border:1px solid #fc5113;padding: 10px;
       border-radius: 50px;" color = "primary"></ion-icon>
       
       <ion-item style = "margin-left: 5px;margin-right: 5px;
@@ -38,7 +38,22 @@
       </p>
     </ion-list>
     <p>
-      <a>Forget Password?</a>
+      <a (click) = "presentAlertPrompt()" style = "color: white;">Forget Password?</a>
     </p>
   </div>
 </ion-content>
+
+<ion-tab-bar slot="bottom">
+
+  <ion-tab-button tab="arrow-back">
+    <ion-icon name="arrow-back" color = "primary"></ion-icon>
+  </ion-tab-button>
+
+  <ion-tab-button tab="home">
+    <ion-icon name="home" color = "primary"></ion-icon>
+  </ion-tab-button>
+
+  <ion-tab-button tab="about">
+    <ion-icon name="information-circle" color = "primary"></ion-icon>
+  </ion-tab-button>
+</ion-tab-bar>

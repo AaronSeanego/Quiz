@@ -10,10 +10,13 @@ export class QuizService {
   Surname;
   userID;
   Email;
-
+  Questions = [];
+  Counter = 0;
   name;
   cat_name;
   new_id;
+  questions = [];
+  id;
   constructor() { }
   logIn(email, password) {
     firebase.auth().signInWithEmailAndPassword(email, password).catch((error) => {
@@ -60,9 +63,48 @@ export class QuizService {
     });
   }
 
-  resetPassord() {}
+  resetPassord() {
+    var user = firebase.auth().currentUser;
+
+    user.sendEmailVerification().then(() => {
+      // Email sent.
+    }).catch((error) => {
+      // An error happened.
+    });
+  }
 
   logOut() {}
 
   deleteAccount() {}
+
+  ViewQuiz () {
+    var rootRef = firebase.database().ref('Questions/' + this.new_id)
+    rootRef.once('value',(snapshot) => {
+      let value = snapshot.val();
+        for(var key in value){
+          this.Counter++;
+          this.Questions.push({
+            Counter: this.Counter,
+            Question: key,
+            Answer: Object.keys(value[key]),
+            Value: Object.values(value[key])
+          });
+        }
+    })
+    return this.Questions
+  }
+
+  Categories() {
+    var king = firebase.database().ref().child('Categories')
+
+      king.on("child_added",snap => {
+        this.name = snap.child("Name").val();
+        this.id = snap.child("ID").val();
+        this.questions.push({
+        ID: this.id,
+        Name: this.name
+      })
+    })
+    return this.questions;
+  }
 }
